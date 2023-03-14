@@ -1,0 +1,29 @@
+==============================
+Properties, with Cabal version
+==============================
+
+cabal-version : 3.4
+version: 1.1
+build-type: Simple
+
+---
+
+(cabal
+  (cabal_version (spec_version))
+  (pkg_props
+    (prop (prop_version (pkg_version)))
+    (prop (prop_build_type (build_type_val)))))
+
+=================================
+Properties, without Cabal version
+=================================
+
+build-type: Simple
+version: 1.0
+
+---
+
+(cabal
+  (pkg_props
+    (prop (prop_build_type (build_type_val)))
+    (prop (prop_version (pkg_version)))))
