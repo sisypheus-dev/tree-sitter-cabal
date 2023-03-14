@@ -19,7 +19,8 @@ module.exports = grammar({
         prop: $ => choice(
             $.prop_name,
             $.prop_version,
-            $.prop_build_type
+            $.prop_build_type,
+            $.prop_property
         ),
 
         prop_name: $ => seq(
@@ -41,7 +42,9 @@ module.exports = grammar({
             $.build_type_val
         ),
 
-        build_type_val: $ => choice('Custom', 'Simple')
+        build_type_val: $ => choice('Custom', 'Simple'),
+
+        prop_property: $ => seq(/\w+/, ':', /.+/)
 
   	// Package properties	
 	//     name	
@@ -50,7 +53,7 @@ module.exports = grammar({
 	//     build-type	
 	//     license	
 	//     license-file	
-	//     license-files (since version: 1.20)	
+	//     license-files
 	//     copyright	
 	//     author	
 	//     maintainer	
