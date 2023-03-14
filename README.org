@@ -1,0 +1,15 @@
+* tree-sitter-cabal
+
+Cabal grammar for [[https://github.com/tree-sitter/tree-sitter][tree-sitter]].
+
+** Supported parts
+
+| Part          | Supported   |
+|---------------+-------------|
+| Cabal version | ✔           |
+| Properties    | ✘ (partial) |
+| Library       | ✘           |
+| Executable    | ✘           |
+| Test          | ✘           |
+| Benchmark     | ✘           |
+
