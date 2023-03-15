@@ -1,6 +1,11 @@
 module.exports = grammar({
     name: 'cabal',
 
+    extras: $ => [
+        $.comment,
+        /\s|\n/,
+    ],
+
     rules: {
         cabal: $ => seq(
             optional($.cabal_version),
@@ -61,5 +66,7 @@ module.exports = grammar({
         ),
 
         sec_library_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
+
+        comment: $ => token(seq('--', /.*/)),
     }
 });

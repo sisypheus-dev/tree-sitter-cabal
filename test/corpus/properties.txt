@@ -39,3 +39,22 @@ library
     (prop (prop_build_type (build_type_val)))
     (prop (prop_property)))
   (pkg_sections (sec_library)))
+
+==============================
+Properties, with comment
+==============================
+
+cabal-version : 3.4 -- set the version explicitly
+name: pkg-foo       -- not a very good name
+
+library
+
+---
+
+(cabal
+  (cabal_version (spec_version))
+  (comment)
+  (pkg_props
+    (prop (prop_name (pkg_name))))
+  (comment)
+  (pkg_sections (sec_library)))
