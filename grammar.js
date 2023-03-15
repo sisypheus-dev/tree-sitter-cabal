@@ -6,6 +6,10 @@ module.exports = grammar({
         /\s|\n/,
     ],
 
+    externals: $ => [
+        $.comment,
+    ],
+
     rules: {
         cabal: $ => seq(
             optional($.cabal_version),
