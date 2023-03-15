@@ -4,7 +4,8 @@ module.exports = grammar({
     rules: {
         cabal: $ => seq(
             optional($.cabal_version),
-            $.pkg_props
+            $.pkg_props,
+            repeat1($.pkg_sections)
         ),
 
         cabal_version: $ => seq(
@@ -44,32 +45,21 @@ module.exports = grammar({
 
         build_type_val: $ => choice('Custom', 'Simple'),
 
-        prop_property: $ => seq(/\w+/, ':', /.+/)
+        prop_property: $ => seq(/\w+/, ':', /.+/),
 
-  	// Package properties	
-	//     name	
-	//     version	
-	//     cabal-version	
-	//     build-type	
-	//     license	
-	//     license-file	
-	//     license-files
-	//     copyright	
-	//     author	
-	//     maintainer	
-	//     stability	
-	//     homepage	
-	//     bug-reports	
-	//     package-url	
-	//     synopsis	
-	//     description	
-	//     category	
-	//     tested-with	
-	//     data-files	
-	//     data-dir	
-	//     extra-source-files	
-	//     extra-doc-files (since version: 1.18)	
-	//     extra-tmp-files
+        pkg_sections: $ => choice(
+            $.sec_library,
+            // $.sec_executable,
+            // $.sec_test_suite,
+            // $.sec_benchmark,
+            // $.sec_foreign_library,
+        ),
 
+        sec_library: $ => seq(
+            'library', optional($.sec_library_name),
+            // repeat($sec_library_field)
+        ),
+
+        sec_library_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
     }
 });

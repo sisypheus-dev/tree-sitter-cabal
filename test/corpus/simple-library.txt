@@ -1,0 +1,35 @@
+==============
+Simple library
+==============
+
+cabal-version : 3.4
+name: pkg-foo
+
+library
+---
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (pkg_props
+    (prop (prop_name (pkg_name))))
+  (pkg_sections
+    (sec_library)))
+
+========================
+Simple library with name
+========================
+
+cabal-version : 3.4
+name: pkg-foo
+
+library named-lib
+---
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (pkg_props
+    (prop (prop_name (pkg_name))))
+  (pkg_sections
+    (sec_library (sec_library_name))))

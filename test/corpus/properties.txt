@@ -6,13 +6,16 @@ name: pkg-foo
 build-type: Simple
 version: 1.0
 
+library
+
 ---
 
 (cabal
   (pkg_props
     (prop (prop_name (pkg_name)))
     (prop (prop_build_type (build_type_val)))
-    (prop (prop_version (pkg_version)))))
+    (prop (prop_version (pkg_version))))
+  (pkg_sections (sec_library)))
 
 ==============================
 Properties, with Cabal version
@@ -24,6 +27,8 @@ version: 1.1
 build-type: Simple
 license: BSD
 
+library
+
 ---
 
 (cabal
@@ -32,4 +37,5 @@ license: BSD
     (prop (prop_name (pkg_name)))
     (prop (prop_version (pkg_version)))
     (prop (prop_build_type (build_type_val)))
-    (prop (prop_property))))
+    (prop (prop_property)))
+  (pkg_sections (sec_library)))
