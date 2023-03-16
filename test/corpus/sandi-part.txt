@@ -1,0 +1,73 @@
+================================================================================
+Propertias and simplified library
+================================================================================
+
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6183f2dd5fde1b5f89e8c5599ef0b4457280d17a3b0126ef21c0f541cc780473
+
+name:           sandi
+version:        0.5
+x-revision: 1
+synopsis:       Data encoding library
+description:    Reasonably fast data encoding library.
+category:       Codec, Conduit
+maintainer:     Magnus Therning <magnus@therning.org>
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  other-modules: Paths_sandi
+  hs-source-dirs: src
+  cc-options: -fPIC -Wall -Wextra
+  c-sources: csrc/codec.c
+  default-language: Haskell2010
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (pkg_props
+    (prop
+      (prop_name
+        (pkg_name)))
+    (prop
+      (prop_version
+        (pkg_version)))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_property))
+    (prop
+      (prop_build_type
+        (build_type_val))))
+  (pkg_sections
+    (sec_library
+      (indent)
+      (sec_library_field)
+      (sec_library_field)
+      (sec_library_field)
+      (sec_library_field)
+      (sec_library_field)
+      (dedent))))
