@@ -56,7 +56,7 @@ module.exports = grammar({
 
         build_type_val: $ => choice('Custom', 'Simple'),
 
-        prop_property: $ => seq(/\w+/, ':', /.+/),
+        prop_property: $ => seq(/\w(\w|-)+/, ':', /.+/),
 
         pkg_sections: $ => choice(
             $.sec_library,
@@ -75,7 +75,7 @@ module.exports = grammar({
 
         sec_library_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
 
-        sec_library_field: $ => seq(/\w+/, ':', /.+/),
+        sec_library_field: $ => seq(/\w(\w|-)+/, ':', /.+/),
 
         comment: $ => token(seq('--', /.*/)),
     }
