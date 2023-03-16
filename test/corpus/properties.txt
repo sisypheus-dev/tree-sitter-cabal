@@ -70,6 +70,7 @@ Properties, with comment
 
 cabal-version : 3.4 -- set the version explicitly
 name: pkg-foo       -- not a very good name
+build-type: Simple  --
 
 library
   foo: bar -- not a valid field
@@ -83,7 +84,11 @@ library
   (pkg_props
     (prop
       (prop_name
-        (pkg_name))))
+        (pkg_name)))
+    (comment)
+    (prop
+      (prop_build_type
+        (build_type_val))))
   (comment)
   (pkg_sections
     (sec_library
