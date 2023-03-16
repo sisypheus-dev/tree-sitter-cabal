@@ -1,3 +1,6 @@
+const properties = require('./grammar/properties.js')
+const libraries = require('./grammar/libraries.js')
+
 module.exports = grammar({
     name: 'cabal',
 
@@ -26,38 +29,6 @@ module.exports = grammar({
 
         spec_version: $ => /\d+\.\d+(\.\d+)?/,
 
-        pkg_props: $ => repeat1($.prop),
-
-        prop: $ => choice(
-            $.prop_name,
-            $.prop_version,
-            $.prop_build_type,
-            $.prop_property
-        ),
-
-        prop_name: $ => seq(
-            'name', ':',
-            $.pkg_name
-        ),
-
-        pkg_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
-
-        prop_version: $ => seq(
-            'version', ':',
-            $.pkg_version
-        ),
-
-        pkg_version: $ => /\d+(\.\d+)*/,
-
-        prop_build_type: $ => seq(
-            'build-type', ':',
-            $.build_type_val
-        ),
-
-        build_type_val: $ => choice('Custom', 'Simple'),
-
-        prop_property: $ => seq(/\w(\w|-)+/, ':', /.+/),
-
         pkg_sections: $ => choice(
             $.sec_library,
             // $.sec_executable,
@@ -66,17 +37,9 @@ module.exports = grammar({
             // $.sec_foreign_library,
         ),
 
-        sec_library: $ => seq(
-            'library', optional($.sec_library_name),
-            $.indent,
-            repeat1($.sec_library_field),
-            $.dedent,
-        ),
-
-        sec_library_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
-
-        sec_library_field: $ => seq(/\w(\w|-)+/, ':', /.+/),
-
         comment: $ => token(seq('--', /.*/)),
+
+        ...properties,
+        ...libraries,
     }
 });
