@@ -6,6 +6,8 @@ cabal-version : 3.4
 name: pkg-foo
 
 library
+  foo: hello
+
 ---
 
 (cabal
@@ -14,7 +16,10 @@ library
   (pkg_props
     (prop (prop_name (pkg_name))))
   (pkg_sections
-    (sec_library)))
+    (sec_library
+      (indent)
+      (sec_library_field)
+      (dedent))))
 
 ========================
 Simple library with name
@@ -24,6 +29,8 @@ cabal-version : 3.4
 name: pkg-foo
 
 library named-lib
+  foo: hello
+
 ---
 
 (cabal
@@ -32,4 +39,7 @@ library named-lib
   (pkg_props
     (prop (prop_name (pkg_name))))
   (pkg_sections
-    (sec_library (sec_library_name))))
+    (sec_library (sec_library_name)
+      (indent)
+      (sec_library_field)
+      (dedent))))
