@@ -1,6 +1,6 @@
-=================================
+================================================================================
 Properties, without Cabal version
-=================================
+================================================================================
 
 name: pkg-foo
 build-type: Simple
@@ -9,22 +9,28 @@ version: 1.0
 library
   foo: bar
 
----
+--------------------------------------------------------------------------------
 
 (cabal
   (pkg_props
-    (prop (prop_name (pkg_name)))
-    (prop (prop_build_type (build_type_val)))
-    (prop (prop_version (pkg_version))))
+    (prop
+      (prop_name
+        (pkg_name)))
+    (prop
+      (prop_build_type
+        (build_type_val)))
+    (prop
+      (prop_version
+        (pkg_version))))
   (pkg_sections
-  (sec_library
-    (indent)
-    (sec_library_field)
-    (dedent))))
+    (sec_library
+      (indent)
+      (sec_library_field)
+      (dedent))))
 
-==============================
+================================================================================
 Properties, with Cabal version
-==============================
+================================================================================
 
 cabal-version : 3.4
 name: pkg-foo
@@ -35,24 +41,32 @@ license: BSD
 library
     foo: bar
 
----
+--------------------------------------------------------------------------------
 
 (cabal
-  (cabal_version (spec_version))
+  (cabal_version
+    (spec_version))
   (pkg_props
-    (prop (prop_name (pkg_name)))
-    (prop (prop_version (pkg_version)))
-    (prop (prop_build_type (build_type_val)))
-    (prop (prop_property)))
+    (prop
+      (prop_name
+        (pkg_name)))
+    (prop
+      (prop_version
+        (pkg_version)))
+    (prop
+      (prop_build_type
+        (build_type_val)))
+    (prop
+      (prop_property)))
   (pkg_sections
     (sec_library
       (indent)
       (sec_library_field)
       (dedent))))
 
-==============================
+================================================================================
 Properties, with comment
-==============================
+================================================================================
 
 cabal-version : 3.4 -- set the version explicitly
 name: pkg-foo       -- not a very good name
@@ -60,13 +74,16 @@ name: pkg-foo       -- not a very good name
 library
   foo: bar -- not a valid field
 
----
+--------------------------------------------------------------------------------
 
 (cabal
-  (cabal_version (spec_version))
+  (cabal_version
+    (spec_version))
   (comment)
   (pkg_props
-    (prop (prop_name (pkg_name))))
+    (prop
+      (prop_name
+        (pkg_name))))
   (comment)
   (pkg_sections
     (sec_library

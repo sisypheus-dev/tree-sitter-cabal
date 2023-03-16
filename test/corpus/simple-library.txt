@@ -1,6 +1,6 @@
-==============
+================================================================================
 Simple library
-==============
+================================================================================
 
 cabal-version : 3.4
 name: pkg-foo
@@ -8,22 +8,24 @@ name: pkg-foo
 library
   foo: hello
 
----
+--------------------------------------------------------------------------------
 
 (cabal
   (cabal_version
     (spec_version))
   (pkg_props
-    (prop (prop_name (pkg_name))))
+    (prop
+      (prop_name
+        (pkg_name))))
   (pkg_sections
     (sec_library
       (indent)
       (sec_library_field)
       (dedent))))
 
-========================
+================================================================================
 Simple library with name
-========================
+================================================================================
 
 cabal-version : 3.4
 name: pkg-foo
@@ -31,15 +33,18 @@ name: pkg-foo
 library named-lib
   foo: hello
 
----
+--------------------------------------------------------------------------------
 
 (cabal
   (cabal_version
     (spec_version))
   (pkg_props
-    (prop (prop_name (pkg_name))))
+    (prop
+      (prop_name
+        (pkg_name))))
   (pkg_sections
-    (sec_library (sec_library_name)
+    (sec_library
+      (sec_library_name)
       (indent)
       (sec_library_field)
       (dedent))))
