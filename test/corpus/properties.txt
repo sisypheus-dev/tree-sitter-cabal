@@ -102,3 +102,79 @@ library
       (indent)
       (sec_library_field)
       (dedent))))
+
+================================================================================
+Properties, with multi-line values
+================================================================================
+
+cabal-version : 3.4
+foo1: Single line value, on same line
+bar1:
+    Single line value, on separate line
+foo2: Two lines, starting on same line
+    and continuing
+bar2:
+    Two lines, starting separate line
+    and continuing
+foo3: Three lines, starting on same line
+    and continuing
+    and continuing
+bar3:
+    Three lines, starting on separate line
+    and continuing
+    and continuing
+
+library
+    foo: bar
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (pkg_props
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)
+        (indent)
+        (prop_value)
+        (dedent)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)
+        (indent)
+        (prop_value)
+        (dedent)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)
+        (indent)
+        (prop_value)
+        (indented)
+        (prop_value)
+        (dedent)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)
+        (indent)
+        (prop_value)
+        (indented)
+        (prop_value)
+        (dedent))))
+  (pkg_sections
+    (sec_library
+      (indent)
+      (sec_library_field)
+      (dedent))))

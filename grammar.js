@@ -13,6 +13,7 @@ module.exports = grammar({
         $.comment,
         $.indent,
         $.dedent,
+        $.indented,
     ],
 
     rules: {

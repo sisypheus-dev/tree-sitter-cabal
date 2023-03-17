@@ -32,6 +32,12 @@ module.exports = {
 
     prop_property: $ => seq(
         $.prop_field, ':', $.prop_value,
+        optional(seq(
+            $.indent,
+            $.prop_value,
+            repeat(seq($.indented, $.prop_value)),
+            $.dedent,
+        )),
     ),
 
     prop_field: $ => /\w(\w|-)+/,
