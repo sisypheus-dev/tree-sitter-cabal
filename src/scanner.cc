@@ -58,11 +58,7 @@ public:
         }
 
         auto cur_indent_lvl = indent_lvls.back();
-        if(valid_symbols[INDENTED] && indent > 0) {
-            lexer->result_symbol = INDENTED;
-            return true;
-        }
-        else if(valid_symbols[INDENT] && indent > cur_indent_lvl) {
+        if(valid_symbols[INDENT] && indent > cur_indent_lvl) {
             indent_lvls.push_back(indent);
             lexer->result_symbol = INDENT;
             return true;
@@ -74,6 +70,9 @@ public:
                 indent_lvls.push_back(indent);
             }
             lexer->result_symbol = DEDENT;
+            return true;
+        } else if(valid_symbols[INDENTED] && indent > 0) {
+            lexer->result_symbol = INDENTED;
             return true;
         } else {
             return false;

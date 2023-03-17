@@ -20,12 +20,32 @@ maintainer:     Magnus Therning <magnus@therning.org>
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
+extra-source-files:
+    package.yaml
+    csrc/codec.h
 
 library
-  other-modules: Paths_sandi
-  hs-source-dirs: src
+  exposed-modules:
+      Codec.Binary.Base16
+      Codec.Binary.Base32
+      Codec.Binary.Base32Hex
+      Codec.Binary.Base64
+      Codec.Binary.Base64Url
+      Codec.Binary.Base85
+      Codec.Binary.QuotedPrintable
+      Codec.Binary.Uu
+      Codec.Binary.Xx
+      Codec.Binary.Yenc
+  other-modules:
+      Paths_sandi
+  hs-source-dirs:
+      src
   cc-options: -fPIC -Wall -Wextra
-  c-sources: csrc/codec.c
+  c-sources:
+      csrc/codec.c
+  build-depends:
+    , base <5
+    , bytestring
   default-language: Haskell2010
 
 --------------------------------------------------------------------------------
@@ -75,13 +95,39 @@ library
         (prop_value)))
     (prop
       (prop_build_type
-        (build_type_val))))
+        (build_type_val)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)
+        (indent)
+        (prop_value)
+        (dedent))))
   (pkg_sections
     (sec_library
       (indent)
       (sec_lib_field
         (sec_lib_field_name)
-        (sec_lib_field_value))
+        (sec_lib_field_value)
+        (indent)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (indented)
+        (sec_lib_field_value)
+        (dedent))
       (sec_lib_field
         (sec_lib_field_name)
         (sec_lib_field_value))
@@ -91,6 +137,15 @@ library
       (sec_lib_field
         (sec_lib_field_name)
         (sec_lib_field_value))
+      (sec_lib_field
+        (sec_lib_field_name)
+        (sec_lib_field_value))
+      (sec_lib_field
+        (sec_lib_field_name)
+        (sec_lib_field_value)
+        (indent)
+        (sec_lib_field_value)
+        (dedent))
       (sec_lib_field
         (sec_lib_field_name)
         (sec_lib_field_value))
