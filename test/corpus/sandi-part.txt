@@ -46,19 +46,33 @@ library
       (prop_version
         (pkg_version)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
-      (prop_property))
+      (prop_property
+        (prop_field)
+        (prop_value)))
     (prop
       (prop_build_type
         (build_type_val))))

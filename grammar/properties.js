@@ -6,7 +6,7 @@ module.exports = {
         $.prop_name,
         $.prop_version,
         $.prop_build_type,
-        $.prop_property
+        $.prop_property,
     ),
 
     prop_name: $ => seq(
@@ -30,5 +30,11 @@ module.exports = {
 
     build_type_val: $ => choice('Custom', 'Simple'),
 
-    prop_property: $ => seq(/\w(\w|-)+/, ':', /.+/),
+    prop_property: $ => seq(
+        $.prop_field, ':', $.prop_value,
+    ),
+
+    prop_field: $ => /\w(\w|-)+/,
+
+    prop_value: $ => /.+/,
 }

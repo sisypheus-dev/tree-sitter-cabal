@@ -57,7 +57,9 @@ library
       (prop_build_type
         (build_type_val)))
     (prop
-      (prop_property)))
+      (prop_property
+        (prop_field)
+        (prop_value))))
   (pkg_sections
     (sec_library
       (indent)
@@ -92,7 +94,9 @@ library
         (build_type_val)))
     (comment)
     (prop
-      (prop_property)))
+      (prop_property
+        (prop_field)
+        (prop_value))))
   (pkg_sections
     (sec_library
       (indent)
