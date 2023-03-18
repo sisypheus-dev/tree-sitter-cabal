@@ -22,6 +22,10 @@ license:       OtherLicense
 license-file:  COPYING
 build-type:    Simple
 
+source-repository head
+  type:     git
+  location: https://github.com/magthe/omnicodec.git
+
 executable odec
   main-is:          odec.hs
   other-modules:    Paths_omnicodec
@@ -96,6 +100,17 @@ executable oenc
     (prop
       (prop_build_type
         (build_type_val))))
+  (pkg_sections
+    (sec_source_repository
+      (sec_src_name)
+      (indent)
+      (sec_src_field
+        (sec_src_field_name)
+        (sec_src_field_value))
+      (sec_src_field
+        (sec_src_field_name)
+        (sec_src_field_value))
+      (dedent)))
   (pkg_sections
     (sec_executable
       (sec_exe_name)

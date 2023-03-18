@@ -1,6 +1,7 @@
 const properties = require('./grammar/properties.js')
 const libraries = require('./grammar/libraries.js')
 const exectuables = require('./grammar/executables.js')
+const source_repositories = require('./grammar/source_repositories.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -32,17 +33,19 @@ module.exports = grammar({
         spec_version: $ => /\d+\.\d+(\.\d+)?/,
 
         pkg_sections: $ => choice(
-            $.sec_library,
-            $.sec_executable,
-            // $.sec_test_suite,
             // $.sec_benchmark,
-            // $.sec_foreign_library,
+            $.sec_executable,
+            // $.sec_flag,
+            $.sec_library,
+            $.sec_source_repository,
+            // $.sec_test_suite,
         ),
 
         comment: $ => token(seq('--', /.*/)),
 
-        ...properties,
-        ...libraries,
         ...exectuables,
+        ...libraries,
+        ...properties,
+        ...source_repositories
     }
 });
