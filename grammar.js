@@ -3,6 +3,7 @@ const libraries = require('./grammar/libraries.js')
 const exectuables = require('./grammar/executables.js')
 const source_repositories = require('./grammar/source_repositories.js')
 const test_suites = require('./grammar/test_suites.js')
+const benchmarks = require('./grammar/benchmarks.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -34,7 +35,7 @@ module.exports = grammar({
         spec_version: $ => /\d+\.\d+(\.\d+)?/,
 
         pkg_sections: $ => choice(
-            // $.sec_benchmark,
+            $.sec_benchmark,
             $.sec_executable,
             // $.sec_flag,
             $.sec_library,
@@ -49,5 +50,6 @@ module.exports = grammar({
         ...properties,
         ...source_repositories,
         ...test_suites,
+        ...benchmarks,
     }
 });

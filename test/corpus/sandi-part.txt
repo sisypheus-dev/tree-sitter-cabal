@@ -77,6 +77,31 @@ test-suite sandi-tests
 
   default-language: Haskell2010
 
+benchmark sandi-bench
+  type:             exitcode-stdio-1.0
+  main-is:          Main.hs
+  other-modules:
+    Codec.Binary.Base16Bench
+    Codec.Binary.Base32Bench
+    Codec.Binary.Base32HexBench
+    Codec.Binary.Base64Bench
+    Codec.Binary.Base64UrlBench
+    Codec.Binary.Base85Bench
+    Codec.Binary.QuotedPrintableBench
+    Codec.Binary.UuBench
+    Codec.Binary.XxBench
+    Codec.Binary.YencBench
+    Paths_sandi
+
+  hs-source-dirs:   bench-src
+  build-depends:
+      base
+    , bytestring
+    , criterion
+    , sandi
+
+  default-language: Haskell2010
+
 --------------------------------------------------------------------------------
 
 (cabal
@@ -237,4 +262,55 @@ test-suite sandi-tests
       (sec_test_field
         (sec_test_field_name)
         (sec_test_field_value))
+      (dedent)))
+  (pkg_sections
+    (sec_benchmark
+      (sec_bench_name)
+      (indent)
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value))
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value))
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value)
+        (indent)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (dedent))
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value))
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value)
+        (indent)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (indented)
+        (sec_bench_field_value)
+        (dedent))
+      (sec_bench_field
+        (sec_bench_field_name)
+        (sec_bench_field_value))
       (dedent))))
