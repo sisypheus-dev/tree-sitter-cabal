@@ -2,7 +2,7 @@
 Real Cabal file - (simplified) sandi
 ================================================================================
 
-cabal-version: 1.12
+cabal-version:      1.12
 
 -- This file has been generated from package.yaml by hpack version 0.31.1.
 --
@@ -10,42 +10,49 @@ cabal-version: 1.12
 --
 -- hash: 6183f2dd5fde1b5f89e8c5599ef0b4457280d17a3b0126ef21c0f541cc780473
 
-name:           sandi
-version:        0.5
-x-revision: 1
-synopsis:       Data encoding library
-description:    Reasonably fast data encoding library.
-category:       Codec, Conduit
-maintainer:     Magnus Therning <magnus@therning.org>
-license:        BSD3
-license-file:   LICENSE
-build-type:     Simple
+name:               sandi
+version:            0.5
+x-revision:         1
+synopsis:           Data encoding library
+description:        Reasonably fast data encoding library.
+category:           Codec, Conduit
+maintainer:         Magnus Therning <magnus@therning.org>
+license:            BSD3
+license-file:       LICENSE
+build-type:         Simple
 extra-source-files:
-    package.yaml
-    csrc/codec.h
+  csrc/codec.h
+  package.yaml
+
+source-repository head
+  type:     git
+  location: https://github.com/magthe/sandi.git
+
+flag with-conduit
+  manual:  True
+  default: True
 
 library
   exposed-modules:
-      Codec.Binary.Base16
-      Codec.Binary.Base32
-      Codec.Binary.Base32Hex
-      Codec.Binary.Base64
-      Codec.Binary.Base64Url
-      Codec.Binary.Base85
-      Codec.Binary.QuotedPrintable
-      Codec.Binary.Uu
-      Codec.Binary.Xx
-      Codec.Binary.Yenc
-  other-modules:
-      Paths_sandi
-  hs-source-dirs:
-      src
-  cc-options: -fPIC -Wall -Wextra
-  c-sources:
-      csrc/codec.c
+    Codec.Binary.Base16
+    Codec.Binary.Base32
+    Codec.Binary.Base32Hex
+    Codec.Binary.Base64
+    Codec.Binary.Base64Url
+    Codec.Binary.Base85
+    Codec.Binary.QuotedPrintable
+    Codec.Binary.Uu
+    Codec.Binary.Xx
+    Codec.Binary.Yenc
+
+  other-modules:    Paths_sandi
+  hs-source-dirs:   src
+  cc-options:       -fPIC -Wall -Wextra
+  c-sources:        csrc/codec.c
   build-depends:
-    , base <5
+      base        <5
     , bytestring
+
   default-language: Haskell2010
 
 test-suite sandi-tests
@@ -157,6 +164,28 @@ benchmark sandi-bench
         (indent)
         (prop_value)
         (dedent))))
+  (pkg_sections
+    (sec_source_repository
+      (sec_src_name)
+      (indent)
+      (sec_src_field
+        (sec_src_field_name)
+        (sec_src_field_value))
+      (sec_src_field
+        (sec_src_field_name)
+        (sec_src_field_value))
+      (dedent)))
+  (pkg_sections
+    (sec_flag
+      (sec_fl_name)
+      (indent)
+      (sec_fl_field
+        (sec_fl_field_name)
+        (sec_fl_field_value))
+      (sec_fl_field
+        (sec_fl_field_name)
+        (sec_fl_field_value))
+      (dedent)))
   (pkg_sections
     (sec_library
       (indent)

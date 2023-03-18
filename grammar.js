@@ -4,6 +4,7 @@ const exectuables = require('./grammar/executables.js')
 const source_repositories = require('./grammar/source_repositories.js')
 const test_suites = require('./grammar/test_suites.js')
 const benchmarks = require('./grammar/benchmarks.js')
+const flags = require('./grammar/flags.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -37,7 +38,7 @@ module.exports = grammar({
         pkg_sections: $ => choice(
             $.sec_benchmark,
             $.sec_executable,
-            // $.sec_flag,
+            $.sec_flag,
             $.sec_library,
             $.sec_source_repository,
             $.sec_test_suite,
@@ -45,11 +46,12 @@ module.exports = grammar({
 
         comment: $ => token(seq('--', /.*/)),
 
+        ...benchmarks,
         ...exectuables,
+        ...flags,
         ...libraries,
         ...properties,
         ...source_repositories,
         ...test_suites,
-        ...benchmarks,
     }
 });
