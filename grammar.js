@@ -2,6 +2,7 @@ const properties = require('./grammar/properties.js')
 const libraries = require('./grammar/libraries.js')
 const exectuables = require('./grammar/executables.js')
 const source_repositories = require('./grammar/source_repositories.js')
+const test_suites = require('./grammar/test_suites.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -38,7 +39,7 @@ module.exports = grammar({
             // $.sec_flag,
             $.sec_library,
             $.sec_source_repository,
-            // $.sec_test_suite,
+            $.sec_test_suite,
         ),
 
         comment: $ => token(seq('--', /.*/)),
@@ -46,6 +47,7 @@ module.exports = grammar({
         ...exectuables,
         ...libraries,
         ...properties,
-        ...source_repositories
+        ...source_repositories,
+        ...test_suites,
     }
 });

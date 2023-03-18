@@ -48,6 +48,35 @@ library
     , bytestring
   default-language: Haskell2010
 
+test-suite sandi-tests
+  type:             exitcode-stdio-1.0
+  main-is:          Main.hs
+  other-modules:
+    Codec.Binary.Base16Test
+    Codec.Binary.Base32HexTest
+    Codec.Binary.Base32Test
+    Codec.Binary.Base64Test
+    Codec.Binary.Base64UrlTest
+    Codec.Binary.Base85Test
+    Codec.Binary.QuotedPrintableTest
+    Codec.Binary.UuTest
+    Codec.Binary.XxTest
+    Codec.Binary.YencTest
+    Codec.TestUtils
+    Paths_sandi
+
+  hs-source-dirs:   test-src
+  build-depends:
+      base
+    , bytestring
+    , sandi
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , tasty-th
+
+  default-language: Haskell2010
+
 --------------------------------------------------------------------------------
 
 (cabal
@@ -149,4 +178,63 @@ library
       (sec_lib_field
         (sec_lib_field_name)
         (sec_lib_field_value))
+      (dedent)))
+  (pkg_sections
+    (sec_test_suite
+      (sec_test_name)
+      (indent)
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value))
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value))
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value)
+        (indent)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (dedent))
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value))
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value)
+        (indent)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (indented)
+        (sec_test_field_value)
+        (dedent))
+      (sec_test_field
+        (sec_test_field_name)
+        (sec_test_field_value))
       (dedent))))
