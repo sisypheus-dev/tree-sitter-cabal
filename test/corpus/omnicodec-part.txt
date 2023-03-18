@@ -1,0 +1,166 @@
+================================================================================
+Real Cabal file - (simplified) omnicodec
+================================================================================
+
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ae6d7c6f78d12539cc6fe2febc529b9aecc04f2c70f1f2a1e869819dd375d535
+
+name:          omnicodec
+version:       0.8
+synopsis:      Data encoding and decoding command line utilities
+description:
+  Two simple command line tools built on sandi (http://hackage.haskell.org/package/sandi).
+
+category:      Codec
+maintainer:    Magnus Therning <magnus@therning.org>
+license:       OtherLicense
+license-file:  COPYING
+build-type:    Simple
+
+executable odec
+  main-is:          odec.hs
+  other-modules:    Paths_omnicodec
+  hs-source-dirs:   src
+  ghc-options:      -Wall
+  build-depends:
+      base          <5
+    , bytestring
+    , cmdargs
+    , conduit
+    , sandi
+    , transformers
+
+  default-language: Haskell2010
+
+executable oenc
+  main-is:          oenc.hs
+  other-modules:    Paths_omnicodec
+  hs-source-dirs:   src
+  ghc-options:      -Wall
+  build-depends:
+      base          <5
+    , bytestring
+    , cmdargs
+    , conduit
+    , sandi
+    , transformers
+
+  default-language: Haskell2010
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (pkg_props
+    (prop
+      (prop_name
+        (pkg_name)))
+    (prop
+      (prop_version
+        (pkg_version)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_property
+        (prop_field)
+        (prop_value)))
+    (prop
+      (prop_build_type
+        (build_type_val))))
+  (pkg_sections
+    (sec_executable
+      (sec_exe_name)
+      (indent)
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value)
+        (indent)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (dedent))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (dedent)))
+  (pkg_sections
+    (sec_executable
+      (sec_exe_name)
+      (indent)
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value)
+        (indent)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (indented)
+        (sec_exe_field_value)
+        (dedent))
+      (sec_exe_field
+        (sec_exe_field_name)
+        (sec_exe_field_value))
+      (dedent))))

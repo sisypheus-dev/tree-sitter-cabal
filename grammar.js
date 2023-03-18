@@ -1,5 +1,6 @@
 const properties = require('./grammar/properties.js')
 const libraries = require('./grammar/libraries.js')
+const exectuables = require('./grammar/executables.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -32,7 +33,7 @@ module.exports = grammar({
 
         pkg_sections: $ => choice(
             $.sec_library,
-            // $.sec_executable,
+            $.sec_executable,
             // $.sec_test_suite,
             // $.sec_benchmark,
             // $.sec_foreign_library,
@@ -42,5 +43,6 @@ module.exports = grammar({
 
         ...properties,
         ...libraries,
+        ...exectuables,
     }
 });
