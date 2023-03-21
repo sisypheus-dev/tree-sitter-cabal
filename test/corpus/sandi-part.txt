@@ -120,37 +120,37 @@ benchmark sandi-bench
   (comment)
   (comment)
   (properties
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value))
-    (prop
+    (field
       (field_name)
       (field_value)
       (indent)

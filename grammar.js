@@ -34,17 +34,7 @@ module.exports = grammar({
 
         spec_version: $ => /\d+\.\d+(\.\d+)?/,
 
-        properties: $ => repeat1($.prop),
-
-        prop: $ => seq(
-            $.field_name, ':', $.field_value,
-            optional(seq(
-                $.indent,
-                $.field_value,
-                repeat(seq($.indented, $.field_value)),
-                $.dedent,
-            )),
-        ),
+        properties: $ => repeat1($.field),
 
         sections: $ => choice(
             $.sec_benchmark,
@@ -56,6 +46,16 @@ module.exports = grammar({
         ),
 
         comment: $ => token(seq('--', /.*/)),
+
+        field: $ => seq(
+            $.field_name, ':', $.field_value,
+            optional(seq(
+                $.indent,
+                $.field_value,
+                repeat(seq($.indented, $.field_value)),
+                $.dedent,
+            )),
+        ),
 
         field_name: $ => /\w(\w|-)+/,
 

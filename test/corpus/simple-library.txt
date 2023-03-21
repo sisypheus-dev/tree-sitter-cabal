@@ -14,7 +14,7 @@ library
   (cabal_version
     (spec_version))
   (properties
-    (prop
+    (field
       (field_name)
       (field_value)))
   (sections
@@ -41,7 +41,7 @@ library named-lib
   (cabal_version
     (spec_version))
   (properties
-    (prop
+    (field
       (field_name)
       (field_value)))
   (sections
