@@ -1,0 +1,76 @@
+================================================================================
+Indentation before sections
+================================================================================
+
+cabal-version: 1.0
+foo:
+  tata
+  titi
+  tutu
+
+flag bar
+  hoge: fuga
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)
+      (indent)
+      (field_value)
+      (indented)
+      (field_value)
+      (dedent)))
+  (sections
+    (flag
+      (section_name)
+      (indent)
+      (field
+        (field_name)
+        (field_value))
+      (dedent))))
+
+================================================================================
+Indentation between sections
+================================================================================
+
+cabal-version: 1.0
+foo: tata titi tutu
+
+library
+  hoge: fuga
+    piyo
+
+executable foo
+  foo: bar
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (library
+      (indent)
+      (field
+        (field_name)
+        (field_value)
+        (indent)
+        (field_value)
+        (dedent))
+      (dedent))
+    (executable
+      (section_name)
+      (indent)
+      (field
+        (field_name)
+        (field_value))
+      (dedent))))

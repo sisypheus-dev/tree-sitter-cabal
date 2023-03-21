@@ -22,21 +22,31 @@ public:
 
     unsigned serialize(char *buffer) {
         size_t i = 0;
+        buffer[i++] = pending_dedents;
         for_each(indent_lvls.cbegin(), indent_lvls.cend(), [buffer, &i](uint8_t const n) { buffer[i++] = n; });
-        return indent_lvls.size();
+        return indent_lvls.size() + 1;
     }
 
     void deserialize(char const *buffer, unsigned length) {
+        pending_dedents = 0;
         indent_lvls.clear();
         indent_lvls.push_back(0);
 
-        for(size_t i = 0; i < length; i++) {
-            indent_lvls.push_back(buffer[i]);
+        if(length > 0) {
+            size_t i = 0;
+            pending_dedents = buffer[i++];
+            for(; i < length; i++) {
+                indent_lvls.push_back(buffer[i]);
+            }
         }
     }
 
     bool scan(TSLexer *lexer, bool const *valid_symbols) {
-        if(valid_symbols[DEDENT] && lexer->eof(lexer)) {
+        if(valid_symbols[DEDENT] && pending_dedents > 0) {
+            pending_dedents--;
+            lexer->result_symbol = DEDENT;
+            return true;
+        } else if(valid_symbols[DEDENT] && lexer->eof(lexer)) {
             lexer->result_symbol = DEDENT;
             return true;
         } else if(lexer->lookahead != '\n') {
@@ -65,10 +75,14 @@ public:
         } else if(valid_symbols[DEDENT] && indent < cur_indent_lvl) {
             while(indent < indent_lvls.back()) {
                 indent_lvls.pop_back();
+                pending_dedents++;
             }
+            pending_dedents--;
+
             if(indent != indent_lvls.back()) {
                 indent_lvls.push_back(indent);
             }
+
             lexer->result_symbol = DEDENT;
             return true;
         } else if(valid_symbols[INDENTED] && indent > 0) {
@@ -81,6 +95,7 @@ public:
 
 private:
     vector<uint8_t> indent_lvls;
+    uint8_t pending_dedents;
 };
 
 extern "C" {
