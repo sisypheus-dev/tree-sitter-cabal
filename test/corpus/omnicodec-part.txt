@@ -106,70 +106,70 @@ executable oenc
         (sec_src_field_value))
       (dedent)))
   (sections
-    (sec_executable
-      (sec_exe_name)
+    (executable
+      (section_name)
       (indent)
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value)
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value)
         (indent)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (dedent))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent)))
   (sections
-    (sec_executable
-      (sec_exe_name)
+    (executable
+      (section_name)
       (indent)
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value)
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value)
         (indent)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (indented)
-        (sec_exe_field_value)
+        (field_value)
         (dedent))
-      (sec_exe_field
-        (sec_exe_field_name)
-        (sec_exe_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
