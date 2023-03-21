@@ -168,15 +168,15 @@ benchmark sandi-bench
         (sec_src_field_value))
       (dedent)))
   (sections
-    (sec_flag
-      (sec_fl_name)
+    (flag
+      (section_name)
       (indent)
-      (sec_fl_field
-        (sec_fl_field_name)
-        (sec_fl_field_value))
-      (sec_fl_field
-        (sec_fl_field_name)
-        (sec_fl_field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent)))
   (sections
     (library

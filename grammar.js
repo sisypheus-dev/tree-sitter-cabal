@@ -1,6 +1,5 @@
 const source_repositories = require('./grammar/source_repositories.js')
 const test_suites = require('./grammar/test_suites.js')
-const flags = require('./grammar/flags.js')
 
 module.exports = grammar({
     name: 'cabal',
@@ -36,7 +35,7 @@ module.exports = grammar({
         sections: $ => choice(
             $.benchmark,
             $.executable,
-            $.sec_flag,
+            $.flag,
             $.library,
             $.sec_source_repository,
             $.sec_test_suite,
@@ -51,6 +50,13 @@ module.exports = grammar({
 
         executable: $ => seq(
             'executable', $.section_name,
+            $.indent,
+            repeat1($.field),
+            $.dedent,
+        ),
+
+        flag: $ => seq(
+            'flag', $.section_name,
             $.indent,
             repeat1($.field),
             $.dedent,
@@ -81,7 +87,6 @@ module.exports = grammar({
 
         field_value: $ => /.+/,
 
-        ...flags,
         ...source_repositories,
         ...test_suites,
     }
