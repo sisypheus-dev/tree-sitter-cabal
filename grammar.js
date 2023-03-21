@@ -1,7 +1,6 @@
 const exectuables = require('./grammar/executables.js')
 const source_repositories = require('./grammar/source_repositories.js')
 const test_suites = require('./grammar/test_suites.js')
-const benchmarks = require('./grammar/benchmarks.js')
 const flags = require('./grammar/flags.js')
 
 module.exports = grammar({
@@ -36,12 +35,19 @@ module.exports = grammar({
         properties: $ => repeat1($.field),
 
         sections: $ => choice(
-            $.sec_benchmark,
+            $.benchmark,
             $.sec_executable,
             $.sec_flag,
             $.library,
             $.sec_source_repository,
             $.sec_test_suite,
+        ),
+
+        benchmark: $ => seq(
+            'benchmark', $.section_name,
+            $.indent,
+            repeat1($.field),
+            $.dedent,
         ),
 
         library: $ => seq(
@@ -69,7 +75,6 @@ module.exports = grammar({
 
         field_value: $ => /.+/,
 
-        ...benchmarks,
         ...exectuables,
         ...flags,
         ...source_repositories,
