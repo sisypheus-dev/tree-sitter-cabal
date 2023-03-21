@@ -17,7 +17,7 @@ library
     (prop
       (field_name)
       (field_value)))
-  (pkg_sections
+  (sections
     (sec_library
       (indent)
       (sec_lib_field
@@ -44,7 +44,7 @@ library named-lib
     (prop
       (field_name)
       (field_value)))
-  (pkg_sections
+  (sections
     (sec_library
       (sec_lib_name)
       (indent)

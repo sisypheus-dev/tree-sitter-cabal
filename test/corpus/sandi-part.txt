@@ -156,7 +156,7 @@ benchmark sandi-bench
       (indent)
       (field_value)
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_source_repository
       (sec_src_name)
       (indent)
@@ -167,7 +167,7 @@ benchmark sandi-bench
         (sec_src_field_name)
         (sec_src_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_flag
       (sec_fl_name)
       (indent)
@@ -178,7 +178,7 @@ benchmark sandi-bench
         (sec_fl_field_name)
         (sec_fl_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_library
       (indent)
       (sec_lib_field
@@ -225,7 +225,7 @@ benchmark sandi-bench
         (sec_lib_field_name)
         (sec_lib_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_test_suite
       (sec_test_name)
       (indent)
@@ -284,7 +284,7 @@ benchmark sandi-bench
         (sec_test_field_name)
         (sec_test_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_benchmark
       (sec_bench_name)
       (indent)

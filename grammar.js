@@ -24,7 +24,7 @@ module.exports = grammar({
         cabal: $ => seq(
             optional($.cabal_version),
             $.properties,
-            repeat1($.pkg_sections)
+            repeat1($.sections)
         ),
 
         cabal_version: $ => seq(
@@ -46,7 +46,7 @@ module.exports = grammar({
             )),
         ),
 
-        pkg_sections: $ => choice(
+        sections: $ => choice(
             $.sec_benchmark,
             $.sec_executable,
             $.sec_flag,

@@ -94,7 +94,7 @@ executable oenc
     (prop
       (field_name)
       (field_value)))
-  (pkg_sections
+  (sections
     (sec_source_repository
       (sec_src_name)
       (indent)
@@ -105,7 +105,7 @@ executable oenc
         (sec_src_field_name)
         (sec_src_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_executable
       (sec_exe_name)
       (indent)
@@ -139,7 +139,7 @@ executable oenc
         (sec_exe_field_name)
         (sec_exe_field_value))
       (dedent)))
-  (pkg_sections
+  (sections
     (sec_executable
       (sec_exe_name)
       (indent)
