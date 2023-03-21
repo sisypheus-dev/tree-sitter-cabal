@@ -23,11 +23,11 @@ library
       (field_name)
       (field_value)))
   (sections
-    (sec_library
+    (library
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
 
 ================================================================================
@@ -62,11 +62,11 @@ library
       (field_name)
       (field_value)))
   (sections
-    (sec_library
+    (library
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
 
 ================================================================================
@@ -98,11 +98,11 @@ library
       (field_name)
       (field_value)))
   (sections
-    (sec_library
+    (library
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
 
 ================================================================================
@@ -170,9 +170,9 @@ library
       (field_value)
       (dedent)))
   (sections
-    (sec_library
+    (library
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))

@@ -18,11 +18,11 @@ library
       (field_name)
       (field_value)))
   (sections
-    (sec_library
+    (library
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
 
 ================================================================================
@@ -45,10 +45,10 @@ library named-lib
       (field_name)
       (field_value)))
   (sections
-    (sec_library
-      (sec_lib_name)
+    (library
+      (section_name)
       (indent)
-      (sec_lib_field
-        (sec_lib_field_name)
-        (sec_lib_field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent))))
