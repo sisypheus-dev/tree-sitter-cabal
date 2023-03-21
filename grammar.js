@@ -1,4 +1,3 @@
-const source_repositories = require('./grammar/source_repositories.js')
 const test_suites = require('./grammar/test_suites.js')
 
 module.exports = grammar({
@@ -37,7 +36,7 @@ module.exports = grammar({
             $.executable,
             $.flag,
             $.library,
-            $.sec_source_repository,
+            $.source_repository,
             $.sec_test_suite,
         ),
 
@@ -69,6 +68,13 @@ module.exports = grammar({
             $.dedent,
         ),
 
+        source_repository: $ => seq(
+            'source-repository', $.section_name,
+            $.indent,
+            repeat1($.field),
+            $.dedent,
+        ),
+
         section_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
 
         comment: $ => token(seq('--', /.*/)),
@@ -87,7 +93,6 @@ module.exports = grammar({
 
         field_value: $ => /.+/,
 
-        ...source_repositories,
         ...test_suites,
     }
 });

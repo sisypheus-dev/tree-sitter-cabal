@@ -95,15 +95,15 @@ executable oenc
       (field_name)
       (field_value)))
   (sections
-    (sec_source_repository
-      (sec_src_name)
+    (source_repository
+      (section_name)
       (indent)
-      (sec_src_field
-        (sec_src_field_name)
-        (sec_src_field_value))
-      (sec_src_field
-        (sec_src_field_name)
-        (sec_src_field_value))
+      (field
+        (field_name)
+        (field_value))
+      (field
+        (field_name)
+        (field_value))
       (dedent)))
   (sections
     (executable
