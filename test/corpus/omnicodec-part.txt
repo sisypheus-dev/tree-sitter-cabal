@@ -104,8 +104,7 @@ executable oenc
       (field
         (field_name)
         (field_value))
-      (dedent)))
-  (sections
+      (dedent))
     (executable
       (section_name)
       (indent)
@@ -138,8 +137,7 @@ executable oenc
       (field
         (field_name)
         (field_value))
-      (dedent)))
-  (sections
+      (dedent))
     (executable
       (section_name)
       (indent)

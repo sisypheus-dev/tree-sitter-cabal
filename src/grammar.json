@@ -21,11 +21,8 @@
           "name": "properties"
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "sections"
-          }
+          "type": "SYMBOL",
+          "name": "sections"
         }
       ]
     },
@@ -58,33 +55,36 @@
       }
     },
     "sections": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "benchmark"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "executable"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "flag"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "library"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "source_repository"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "test_suite"
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "benchmark"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "executable"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "flag"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "library"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "source_repository"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "test_suite"
+          }
+        ]
+      }
     },
     "benchmark": {
       "type": "SEQ",
