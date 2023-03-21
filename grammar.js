@@ -1,5 +1,3 @@
-const test_suites = require('./grammar/test_suites.js')
-
 module.exports = grammar({
     name: 'cabal',
 
@@ -37,7 +35,7 @@ module.exports = grammar({
             $.flag,
             $.library,
             $.source_repository,
-            $.sec_test_suite,
+            $.test_suite,
         ),
 
         benchmark: $ => seq(
@@ -75,6 +73,13 @@ module.exports = grammar({
             $.dedent,
         ),
 
+        test_suite: $ => seq(
+            'test-suite', $.section_name,
+            $.indent,
+            repeat1($.field),
+            $.dedent,
+        ),
+
         section_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
 
         comment: $ => token(seq('--', /.*/)),
@@ -92,7 +97,5 @@ module.exports = grammar({
         field_name: $ => /\w(\w|-)+/,
 
         field_value: $ => /.+/,
-
-        ...test_suites,
     }
 });
