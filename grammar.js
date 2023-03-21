@@ -1,4 +1,3 @@
-const properties = require('./grammar/properties.js')
 const libraries = require('./grammar/libraries.js')
 const exectuables = require('./grammar/executables.js')
 const source_repositories = require('./grammar/source_repositories.js')
@@ -24,7 +23,7 @@ module.exports = grammar({
     rules: {
         cabal: $ => seq(
             optional($.cabal_version),
-            $.pkg_props,
+            $.properties,
             repeat1($.pkg_sections)
         ),
 
@@ -34,6 +33,18 @@ module.exports = grammar({
         ),
 
         spec_version: $ => /\d+\.\d+(\.\d+)?/,
+
+        properties: $ => repeat1($.prop),
+
+        prop: $ => seq(
+            $.field_name, ':', $.field_value,
+            optional(seq(
+                $.indent,
+                $.field_value,
+                repeat(seq($.indented, $.field_value)),
+                $.dedent,
+            )),
+        ),
 
         pkg_sections: $ => choice(
             $.sec_benchmark,
@@ -46,11 +57,14 @@ module.exports = grammar({
 
         comment: $ => token(seq('--', /.*/)),
 
+        field_name: $ => /\w(\w|-)+/,
+
+        field_value: $ => /.+/,
+
         ...benchmarks,
         ...exectuables,
         ...flags,
         ...libraries,
-        ...properties,
         ...source_repositories,
         ...test_suites,
     }

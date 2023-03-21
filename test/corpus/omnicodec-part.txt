@@ -66,40 +66,34 @@ executable oenc
   (comment)
   (comment)
   (comment)
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_version
-        (pkg_version)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_build_type
-        (build_type_val))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_source_repository
       (sec_src_name)

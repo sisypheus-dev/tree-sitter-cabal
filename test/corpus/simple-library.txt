@@ -13,10 +13,10 @@ library
 (cabal
   (cabal_version
     (spec_version))
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_library
       (indent)
@@ -40,10 +40,10 @@ library named-lib
 (cabal
   (cabal_version
     (spec_version))
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_library
       (sec_lib_name)

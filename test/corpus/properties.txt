@@ -12,16 +12,16 @@ library
 --------------------------------------------------------------------------------
 
 (cabal
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_build_type
-        (build_type_val)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_version
-        (pkg_version))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_library
       (indent)
@@ -48,20 +48,19 @@ library
 (cabal
   (cabal_version
     (spec_version))
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_version
-        (pkg_version)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_build_type
-        (build_type_val)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_library
       (indent)
@@ -88,19 +87,16 @@ library
   (cabal_version
     (spec_version))
   (comment)
-  (pkg_props
+  (properties
     (prop
-      (prop_name
-        (pkg_name)))
-    (comment)
+      (field_name)
+      (field_value))
     (prop
-      (prop_build_type
-        (build_type_val)))
-    (comment)
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value))))
+      (field_name)
+      (field_value)))
   (pkg_sections
     (sec_library
       (indent)
@@ -138,47 +134,41 @@ library
 (cabal
   (cabal_version
     (spec_version))
-  (pkg_props
+  (properties
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)))
+      (field_name)
+      (field_value))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)
-        (indent)
-        (prop_value)
-        (dedent)))
+      (field_name)
+      (field_value)
+      (indent)
+      (field_value)
+      (dedent))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)
-        (indent)
-        (prop_value)
-        (dedent)))
+      (field_name)
+      (field_value)
+      (indent)
+      (field_value)
+      (dedent))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)
-        (indent)
-        (prop_value)
-        (indented)
-        (prop_value)
-        (dedent)))
+      (field_name)
+      (field_value)
+      (indent)
+      (field_value)
+      (indented)
+      (field_value)
+      (dedent))
     (prop
-      (prop_property
-        (prop_field)
-        (prop_value)
-        (indent)
-        (prop_value)
-        (indented)
-        (prop_value)
-        (dedent))))
+      (field_name)
+      (field_value)
+      (indent)
+      (field_value)
+      (indented)
+      (field_value)
+      (dedent)))
   (pkg_sections
     (sec_library
       (indent)
