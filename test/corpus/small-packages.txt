@@ -1,0 +1,36 @@
+================================================================================
+Library and executable
+================================================================================
+
+cabal-version : 3.4
+name: pkg-foo
+
+library
+  foo: hello
+
+executable foo
+  bar: good bye
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (library
+      (indent)
+      (field
+        (field_name)
+        (field_value))
+      (dedent))
+    (executable
+      (section_name)
+      (indent)
+      (field
+        (field_name)
+        (field_value))
+      (dedent))))
