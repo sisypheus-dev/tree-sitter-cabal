@@ -1,4 +1,32 @@
 ================================================================================
+Common section
+================================================================================
+
+cabal-version : 3.4
+name: name-of-package
+
+common base
+  field: value
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (common
+      (section_name)
+      (indent)
+      (field
+        (field_name)
+        (field_value))
+      (dedent))))
+
+================================================================================
 Llibrary section (without name)
 ================================================================================
 

@@ -65,6 +65,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "common"
+          },
+          {
+            "type": "SYMBOL",
             "name": "executable"
           },
           {
@@ -92,6 +96,34 @@
         {
           "type": "STRING",
           "value": "benchmark"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "indent"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "field"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dedent"
+        }
+      ]
+    },
+    "common": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "common"
         },
         {
           "type": "SYMBOL",

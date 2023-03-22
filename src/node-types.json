@@ -65,6 +65,33 @@
     }
   },
   {
+    "type": "common",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dedent",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "indent",
+          "named": true
+        },
+        {
+          "type": "section_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "executable",
     "named": true,
     "fields": {},
@@ -204,6 +231,10 @@
           "named": true
         },
         {
+          "type": "common",
+          "named": true
+        },
+        {
           "type": "executable",
           "named": true
         },
@@ -295,6 +326,10 @@
   {
     "type": "comment",
     "named": true
+  },
+  {
+    "type": "common",
+    "named": false
   },
   {
     "type": "dedent",

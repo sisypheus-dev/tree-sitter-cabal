@@ -31,6 +31,7 @@ module.exports = grammar({
 
         sections: $ => repeat1(choice(
             $.benchmark,
+            $.common,
             $.executable,
             $.flag,
             $.library,
@@ -40,6 +41,13 @@ module.exports = grammar({
 
         benchmark: $ => seq(
             'benchmark', $.section_name,
+            $.indent,
+            repeat1($.field),
+            $.dedent,
+        ),
+
+        common: $ => seq(
+            'common', $.section_name,
             $.indent,
             repeat1($.field),
             $.dedent,
