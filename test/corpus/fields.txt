@@ -1,12 +1,14 @@
 ================================================================================
-Common section
+Single value fields
 ================================================================================
 
-cabal-version : 3.4
-name: name-of-package
+cabal-version: 1.0
+name: a-package
 
-common base
-  field: value
+common section
+  field-one: value-one
+  field-two:
+    value-one
 
 --------------------------------------------------------------------------------
 
@@ -25,45 +27,27 @@ common base
         (field
           (field_name)
           (field_value))
-        (dedent)))))
-
-================================================================================
-Llibrary section (without name)
-================================================================================
-
-cabal-version : 3.4
-name: pkg-foo
-
-library
-  foo: hello
-
---------------------------------------------------------------------------------
-
-(cabal
-  (cabal_version
-    (spec_version))
-  (properties
-    (field
-      (field_name)
-      (field_value)))
-  (sections
-    (library
-      (property_block
-        (indent)
         (field
           (field_name)
           (field_value))
         (dedent)))))
 
 ================================================================================
-Llibrary section (with name)
+Multiple value fields
 ================================================================================
 
-cabal-version : 3.4
-name: pkg-foo
+cabal-version: 1.0
+name: a-package
 
-library named-lib
-  foo: hello
+common section
+  field-a: value-one value-two value-three
+  field-c: value-one
+    value-two
+    value-three
+  field-f:
+    value-one
+    value-two
+    value-three
 
 --------------------------------------------------------------------------------
 
@@ -75,11 +59,27 @@ library named-lib
       (field_name)
       (field_value)))
   (sections
-    (library
+    (common
       (section_name)
       (property_block
         (indent)
         (field
           (field_name)
           (field_value))
+        (field
+          (field_name)
+          (field_value)
+          (indent)
+          (field_value)
+          (indented)
+          (field_value)
+          (dedent))
+        (field
+          (field_name)
+          (field_value)
+          (indent)
+          (field_value)
+          (indented)
+          (field_value)
+          (dedent))
         (dedent)))))

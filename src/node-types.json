@@ -8,15 +8,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -73,15 +65,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -100,15 +84,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -158,15 +134,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -185,15 +153,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -213,6 +173,29 @@
       "types": [
         {
           "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dedent",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "indent",
           "named": true
         }
       ]
@@ -266,15 +249,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {
@@ -293,15 +268,7 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
+          "type": "property_block",
           "named": true
         },
         {

@@ -103,18 +103,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -131,18 +120,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -159,18 +137,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -187,18 +154,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -223,18 +179,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -251,18 +196,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -279,18 +213,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "field"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
+          "name": "property_block"
         }
       ]
     },
@@ -313,6 +236,26 @@
           }
         ]
       }
+    },
+    "property_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "indent"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "field"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dedent"
+        }
+      ]
     },
     "field": {
       "type": "SEQ",

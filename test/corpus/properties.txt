@@ -24,11 +24,12 @@ library
       (field_value)))
   (sections
     (library
-      (indent)
-      (field
-        (field_name)
-        (field_value))
-      (dedent))))
+      (property_block
+        (indent)
+        (field
+          (field_name)
+          (field_value))
+        (dedent)))))
 
 ================================================================================
 Properties, with Cabal version
@@ -63,11 +64,12 @@ library
       (field_value)))
   (sections
     (library
-      (indent)
-      (field
-        (field_name)
-        (field_value))
-      (dedent))))
+      (property_block
+        (indent)
+        (field
+          (field_name)
+          (field_value))
+        (dedent)))))
 
 ================================================================================
 Properties, with comment
@@ -99,11 +101,12 @@ library
       (field_value)))
   (sections
     (library
-      (indent)
-      (field
-        (field_name)
-        (field_value))
-      (dedent))))
+      (property_block
+        (indent)
+        (field
+          (field_name)
+          (field_value))
+        (dedent)))))
 
 ================================================================================
 Properties, with multi-line values
@@ -171,8 +174,9 @@ library
       (dedent)))
   (sections
     (library
-      (indent)
-      (field
-        (field_name)
-        (field_value))
-      (dedent))))
+      (property_block
+        (indent)
+        (field
+          (field_name)
+          (field_value))
+        (dedent)))))

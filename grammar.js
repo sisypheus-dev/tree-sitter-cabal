@@ -41,56 +41,48 @@ module.exports = grammar({
 
         benchmark: $ => seq(
             'benchmark', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         common: $ => seq(
             'common', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         executable: $ => seq(
             'executable', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         flag: $ => seq(
             'flag', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         library: $ => seq(
             'library', optional($.section_name),
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         source_repository: $ => seq(
             'source-repository', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         test_suite: $ => seq(
             'test-suite', $.section_name,
-            $.indent,
-            repeat1($.field),
-            $.dedent,
+            $.property_block,
         ),
 
         section_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,
 
         comment: $ => token(seq('--', /.*/)),
+
+        property_block: $ => seq(
+            $.indent,
+            repeat1($.field),
+            $.dedent,
+        ),
 
         field: $ => seq(
             $.field_name, ':', $.field_value,
