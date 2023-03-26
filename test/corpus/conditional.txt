@@ -1,0 +1,132 @@
+================================================================================
+Simplest conditional: single if
+================================================================================
+
+cabal-version: 3.2
+name: singe-if
+
+library
+    if flag(do-if)
+      foo: bar
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (library
+      (property_or_conditional_block
+        (indent)
+        (conditional
+          (condition_if
+            (condition)
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent))))
+        (dedent)))))
+
+================================================================================
+Conditional with else
+================================================================================
+
+cabal-version: 3.2
+name: singe-if
+
+library
+    if flag(do-if)
+      foo: bar
+    else
+      foo: baz
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (library
+      (property_or_conditional_block
+        (indent)
+        (conditional
+          (condition_if
+            (condition)
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent)))
+          (condition_else
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent))))
+        (dedent)))))
+
+================================================================================
+Conditional with elseif
+================================================================================
+
+cabal-version: 3.2
+name: singe-if
+
+library
+    if flag(do-if)
+      foo: bar
+    elseif flag(no-if)
+      foo: baz
+    else
+      foo: qux
+
+--------------------------------------------------------------------------------
+
+(cabal
+  (cabal_version
+    (spec_version))
+  (properties
+    (field
+      (field_name)
+      (field_value)))
+  (sections
+    (library
+      (property_or_conditional_block
+        (indent)
+        (conditional
+          (condition_if
+            (condition)
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent)))
+          (condition_elseif
+            (condition)
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent)))
+          (condition_else
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value))
+              (dedent))))
+        (dedent)))))

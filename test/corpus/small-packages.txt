@@ -22,7 +22,7 @@ executable foo
       (field_value)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -30,7 +30,7 @@ executable foo
         (dedent)))
     (executable
       (section_name)
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)

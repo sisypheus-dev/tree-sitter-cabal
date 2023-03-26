@@ -108,7 +108,7 @@ executable oenc
         (dedent)))
     (executable
       (section_name)
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -142,7 +142,7 @@ executable oenc
         (dedent)))
     (executable
       (section_name)
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)

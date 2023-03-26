@@ -24,7 +24,7 @@ library
       (field_value)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -64,7 +64,7 @@ library
       (field_value)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -101,7 +101,7 @@ library
       (field_value)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -174,7 +174,7 @@ library
       (dedent)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)

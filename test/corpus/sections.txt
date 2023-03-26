@@ -48,7 +48,7 @@ library
       (field_value)))
   (sections
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -77,7 +77,7 @@ library named-lib
   (sections
     (library
       (section_name)
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)

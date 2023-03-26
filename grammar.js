@@ -51,7 +51,7 @@ module.exports = grammar({
 
         executable: $ => seq(
             'executable', $.section_name,
-            $.property_block,
+            $.property_or_conditional_block,
         ),
 
         flag: $ => seq(
@@ -61,7 +61,7 @@ module.exports = grammar({
 
         library: $ => seq(
             'library', optional($.section_name),
-            $.property_block,
+            $.property_or_conditional_block,
         ),
 
         source_repository: $ => seq(
@@ -97,5 +97,22 @@ module.exports = grammar({
         field_name: $ => /\w(\w|-)+/,
 
         field_value: $ => /.+/,
+
+        property_or_conditional_block: $ => seq(
+            $.indent,
+            repeat1(choice($.field, $.conditional)),
+            $.dedent,
+        ),
+
+        conditional: $ => seq(
+            $.condition_if,
+            repeat($.condition_elseif),
+            optional($.condition_else),
+        ),
+
+        condition_if: $ => seq('if', $.condition, $.property_or_conditional_block),
+        condition_elseif: $ => seq('elseif', $.condition, $.property_or_conditional_block),
+        condition_else: $ => seq('else', $.property_or_conditional_block),
+        condition: $ => /.*/,
     }
 });

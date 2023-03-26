@@ -137,7 +137,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "property_block"
+          "name": "property_or_conditional_block"
         }
       ]
     },
@@ -179,7 +179,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "property_block"
+          "name": "property_or_conditional_block"
         }
       ]
     },
@@ -322,6 +322,114 @@
     "field_value": {
       "type": "PATTERN",
       "value": ".+"
+    },
+    "property_or_conditional_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "indent"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "field"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "conditional"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dedent"
+        }
+      ]
+    },
+    "conditional": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "condition_if"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "condition_elseif"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "condition_else"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "condition_if": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "condition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "property_or_conditional_block"
+        }
+      ]
+    },
+    "condition_elseif": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elseif"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "condition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "property_or_conditional_block"
+        }
+      ]
+    },
+    "condition_else": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "else"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "property_or_conditional_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "PATTERN",
+      "value": ".*"
     }
   },
   "extras": [

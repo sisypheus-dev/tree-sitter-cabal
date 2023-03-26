@@ -76,6 +76,82 @@
     }
   },
   {
+    "type": "condition_else",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "property_or_conditional_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "condition_elseif",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "property_or_conditional_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "condition_if",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "property_or_conditional_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "conditional",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition_else",
+          "named": true
+        },
+        {
+          "type": "condition_elseif",
+          "named": true
+        },
+        {
+          "type": "condition_if",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "executable",
     "named": true,
     "fields": {},
@@ -84,7 +160,7 @@
       "required": true,
       "types": [
         {
-          "type": "property_block",
+          "type": "property_or_conditional_block",
           "named": true
         },
         {
@@ -153,7 +229,7 @@
       "required": true,
       "types": [
         {
-          "type": "property_block",
+          "type": "property_or_conditional_block",
           "named": true
         },
         {
@@ -186,6 +262,33 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dedent",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "indent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property_or_conditional_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "conditional",
+          "named": true
+        },
         {
           "type": "dedent",
           "named": true
@@ -299,8 +402,20 @@
     "named": false
   },
   {
+    "type": "condition",
+    "named": true
+  },
+  {
     "type": "dedent",
     "named": true
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "elseif",
+    "named": false
   },
   {
     "type": "executable",
@@ -316,6 +431,10 @@
   },
   {
     "type": "flag",
+    "named": false
+  },
+  {
+    "type": "if",
     "named": false
   },
   {
