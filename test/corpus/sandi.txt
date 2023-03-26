@@ -53,6 +53,24 @@ library
       base        <5
     , bytestring
 
+  if flag(with-conduit)
+    exposed-modules:
+      Data.Conduit.Codec.Base16
+      Data.Conduit.Codec.Base32
+      Data.Conduit.Codec.Base32Hex
+      Data.Conduit.Codec.Base64
+      Data.Conduit.Codec.Base64Url
+      Data.Conduit.Codec.Base85
+      Data.Conduit.Codec.QuotedPrintable
+      Data.Conduit.Codec.Uu
+      Data.Conduit.Codec.Xx
+      Data.Conduit.Codec.Yenc
+
+    other-modules:   Data.Conduit.Codec.Util
+    build-depends:
+        conduit     >=1.3
+      , exceptions
+
   default-language: Haskell2010
 
 test-suite sandi-tests
@@ -180,7 +198,7 @@ benchmark sandi-bench
           (field_value))
         (dedent)))
     (library
-      (property_block
+      (property_or_conditional_block
         (indent)
         (field
           (field_name)
@@ -222,6 +240,43 @@ benchmark sandi-bench
           (indent)
           (field_value)
           (dedent))
+        (conditional
+          (condition_if
+            (condition)
+            (property_or_conditional_block
+              (indent)
+              (field
+                (field_name)
+                (field_value)
+                (indent)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (indented)
+                (field_value)
+                (dedent))
+              (field
+                (field_name)
+                (field_value))
+              (field
+                (field_name)
+                (field_value)
+                (indent)
+                (field_value)
+                (dedent))
+              (dedent))))
         (field
           (field_name)
           (field_value))
