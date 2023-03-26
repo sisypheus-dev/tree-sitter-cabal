@@ -25,7 +25,7 @@ module.exports = grammar({
             $.spec_version
         ),
 
-        spec_version: $ => /\d+\.\d+(\.\d+)?/,
+        spec_version: $ => /\d+\.\d+(\.\d+)?\s*\n/,
 
         properties: $ => repeat1($.field),
 

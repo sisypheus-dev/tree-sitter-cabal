@@ -45,7 +45,7 @@
     },
     "spec_version": {
       "type": "PATTERN",
-      "value": "\\d+\\.\\d+(\\.\\d+)?"
+      "value": "\\d+\\.\\d+(\\.\\d+)?\\s*\\n"
     },
     "properties": {
       "type": "REPEAT1",
