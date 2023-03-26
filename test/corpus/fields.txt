@@ -71,7 +71,6 @@ common section
           (field_value)
           (indent)
           (field_value)
-          (indented)
           (field_value)
           (dedent))
         (field
@@ -79,7 +78,6 @@ common section
           (field_value)
           (indent)
           (field_value)
-          (indented)
           (field_value)
           (dedent))
         (dedent)))))

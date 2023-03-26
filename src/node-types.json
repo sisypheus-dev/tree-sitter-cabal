@@ -193,10 +193,6 @@
         {
           "type": "indent",
           "named": true
-        },
-        {
-          "type": "indented",
-          "named": true
         }
       ]
     }
@@ -439,10 +435,6 @@
   },
   {
     "type": "indent",
-    "named": true
-  },
-  {
-    "type": "indented",
     "named": true
   },
   {

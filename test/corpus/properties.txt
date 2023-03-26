@@ -161,7 +161,6 @@ library
       (field_value)
       (indent)
       (field_value)
-      (indented)
       (field_value)
       (dedent))
     (field
@@ -169,7 +168,6 @@ library
       (field_value)
       (indent)
       (field_value)
-      (indented)
       (field_value)
       (dedent)))
   (sections

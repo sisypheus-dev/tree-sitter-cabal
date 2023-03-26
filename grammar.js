@@ -10,7 +10,7 @@ module.exports = grammar({
         $.comment,
         $.indent,
         $.dedent,
-        $.indented,
+        $._indented,
     ],
 
     rules: {
@@ -89,7 +89,7 @@ module.exports = grammar({
             optional(seq(
                 $.indent,
                 $.field_value,
-                repeat(seq($.indented, $.field_value)),
+                repeat(seq($._indented, $.field_value)),
                 $.dedent,
             )),
         ),
