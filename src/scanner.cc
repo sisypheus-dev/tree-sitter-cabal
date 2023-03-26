@@ -8,7 +8,7 @@ using namespace std;
 
 namespace {
 enum token_t {
-    COMMENT,
+    SILLY,
     INDENT,
     DEDENT,
     INDENTED,

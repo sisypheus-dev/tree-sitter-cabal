@@ -23,6 +23,13 @@
         {
           "type": "SYMBOL",
           "name": "sections"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
         }
       ]
     },
@@ -50,8 +57,20 @@
     "properties": {
       "type": "REPEAT1",
       "content": {
-        "type": "SYMBOL",
-        "name": "field"
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "comment"
+            }
+          },
+          {
+            "type": "SYMBOL",
+            "name": "field"
+          }
+        ]
       }
     },
     "sections": {
@@ -94,6 +113,13 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
           "type": "STRING",
           "value": "benchmark"
         },
@@ -110,6 +136,13 @@
     "common": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
         {
           "type": "STRING",
           "value": "common"
@@ -128,6 +161,13 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
           "type": "STRING",
           "value": "executable"
         },
@@ -145,6 +185,13 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
           "type": "STRING",
           "value": "flag"
         },
@@ -161,6 +208,13 @@
     "library": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
         {
           "type": "STRING",
           "value": "library"
@@ -187,6 +241,13 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
           "type": "STRING",
           "value": "source-repository"
         },
@@ -203,6 +264,13 @@
     "test_suite": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
         {
           "type": "STRING",
           "value": "test-suite"
@@ -245,10 +313,29 @@
           "name": "indent"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "field"
+            "name": "comment"
+          }
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "field"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "comment"
+                }
+              }
+            ]
           }
         },
         {
@@ -331,17 +418,36 @@
           "name": "indent"
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
           "type": "REPEAT1",
           "content": {
-            "type": "CHOICE",
+            "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "field"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "field"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "conditional"
+                  }
+                ]
               },
               {
-                "type": "SYMBOL",
-                "name": "conditional"
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "comment"
+                }
               }
             ]
           }
@@ -435,19 +541,26 @@
   "extras": [
     {
       "type": "SYMBOL",
-      "name": "comment"
+      "name": "silly"
     },
     {
       "type": "PATTERN",
       "value": "\\s|\\n"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "properties"
+    ],
+    [
+      "sections"
+    ]
+  ],
   "precedences": [],
   "externals": [
     {
       "type": "SYMBOL",
-      "name": "comment"
+      "name": "silly"
     },
     {
       "type": "SYMBOL",

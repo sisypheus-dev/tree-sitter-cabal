@@ -2,15 +2,20 @@ module.exports = grammar({
     name: 'cabal',
 
     extras: $ => [
-        $.comment,
+        $.silly,
         /\s|\n/,
     ],
 
     externals: $ => [
-        $.comment,
+        $.silly,
         $.indent,
         $.dedent,
         $._indented,
+    ],
+
+    conflicts: $ => [
+        [$.properties],
+        [$.sections]
     ],
 
     rules: {
@@ -18,6 +23,7 @@ module.exports = grammar({
             optional($.cabal_version),
             $.properties,
             $.sections,
+            repeat($.comment),
         ),
 
         cabal_version: $ => seq(
@@ -27,7 +33,10 @@ module.exports = grammar({
 
         spec_version: $ => /\d+\.\d+(\.\d+)?\s*\n/,
 
-        properties: $ => repeat1($.field),
+        properties: $ => repeat1(seq(
+            repeat($.comment),
+            $.field,
+        )),
 
         sections: $ => repeat1(choice(
             $.benchmark,
@@ -40,36 +49,43 @@ module.exports = grammar({
         )),
 
         benchmark: $ => seq(
+            repeat($.comment),
             'benchmark', $.section_name,
             $.property_block,
         ),
 
         common: $ => seq(
+            repeat($.comment),
             'common', $.section_name,
             $.property_block,
         ),
 
         executable: $ => seq(
+            repeat($.comment),
             'executable', $.section_name,
             $.property_or_conditional_block,
         ),
 
         flag: $ => seq(
+            repeat($.comment),
             'flag', $.section_name,
             $.property_block,
         ),
 
         library: $ => seq(
+            repeat($.comment),
             'library', optional($.section_name),
             $.property_or_conditional_block,
         ),
 
         source_repository: $ => seq(
+            repeat($.comment),
             'source-repository', $.section_name,
             $.property_block,
         ),
 
         test_suite: $ => seq(
+            repeat($.comment),
             'test-suite', $.section_name,
             $.property_block,
         ),
@@ -80,7 +96,11 @@ module.exports = grammar({
 
         property_block: $ => seq(
             $.indent,
-            repeat1($.field),
+            repeat($.comment),
+            repeat1(seq(
+                $.field,
+                repeat($.comment),
+            )),
             $.dedent,
         ),
 
@@ -100,7 +120,10 @@ module.exports = grammar({
 
         property_or_conditional_block: $ => seq(
             $.indent,
-            repeat1(choice($.field, $.conditional)),
+            repeat($.comment),
+            repeat1(seq(
+                choice($.field, $.conditional),
+                repeat($.comment))),
             $.dedent,
         ),
 

@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "property_block",
           "named": true
         },
@@ -28,6 +32,10 @@
       "types": [
         {
           "type": "cabal_version",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         },
         {
@@ -64,6 +72,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "property_block",
           "named": true
@@ -160,6 +172,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "property_or_conditional_block",
           "named": true
         },
@@ -206,6 +222,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "property_block",
           "named": true
         },
@@ -224,6 +244,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "property_or_conditional_block",
           "named": true
@@ -244,6 +268,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "field",
           "named": true
         }
@@ -258,6 +286,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "dedent",
           "named": true
@@ -281,6 +313,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "conditional",
           "named": true
@@ -348,6 +384,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "property_block",
           "named": true
         },
@@ -366,6 +406,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "property_block",
           "named": true
@@ -443,6 +487,10 @@
   },
   {
     "type": "section_name",
+    "named": true
+  },
+  {
+    "type": "silly",
     "named": true
   },
   {

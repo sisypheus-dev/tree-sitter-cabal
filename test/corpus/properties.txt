@@ -75,24 +75,32 @@ library
 Properties, with comment
 ================================================================================
 
--- set the version explicitly
 cabal-version : 3.4
+-- cabal-version really has to be first!
 name: pkg-foo
 -- a comment must be on a line by itself 
 build-type: Simple
 foo-bar: baz
 
+-- the first section
 library
-  -- this isn't a valid field
+  -- begin block with comment
   foo: bar
+  -- end block with comment
+
+-- here comes another section
+executable foo
+  bar: baz
+
+-- end with a comment
 
 --------------------------------------------------------------------------------
 
 (cabal
-  (comment)
   (cabal_version
     (spec_version))
   (properties
+    (comment)
     (field
       (field_name)
       (field_value))
@@ -105,13 +113,25 @@ library
       (field_value)))
   (sections
     (library
+      (comment)
       (property_or_conditional_block
         (indent)
         (comment)
         (field
           (field_name)
           (field_value))
-        (dedent)))))
+        (comment)
+        (dedent)))
+    (executable
+      (comment)
+      (section_name)
+      (property_or_conditional_block
+        (indent)
+        (field
+          (field_name)
+          (field_value))
+        (dedent))))
+  (comment))
 
 ================================================================================
 Properties, with multi-line values
