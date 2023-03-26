@@ -75,24 +75,28 @@ library
 Properties, with comment
 ================================================================================
 
-cabal-version : 3.4 -- set the version explicitly
-name: pkg-foo       -- not a very good name
-build-type: Simple  --
+-- set the version explicitly
+cabal-version : 3.4
+name: pkg-foo
+-- a comment must be on a line by itself 
+build-type: Simple
 foo-bar: baz
 
 library
-  foo: bar -- not a valid field
+  -- this isn't a valid field
+  foo: bar
 
 --------------------------------------------------------------------------------
 
 (cabal
+  (comment)
   (cabal_version
     (spec_version))
-  (comment)
   (properties
     (field
       (field_name)
       (field_value))
+    (comment)
     (field
       (field_name)
       (field_value))
@@ -103,6 +107,7 @@ library
     (library
       (property_or_conditional_block
         (indent)
+        (comment)
         (field
           (field_name)
           (field_value))
