@@ -2,21 +2,34 @@
   {
     "type": "benchmark",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -67,21 +80,34 @@
   {
     "type": "common",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -166,21 +192,34 @@
   {
     "type": "executable",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_or_conditional_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_or_conditional_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -216,21 +255,34 @@
   {
     "type": "flag",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -239,21 +291,34 @@
   {
     "type": "library",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_or_conditional_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_or_conditional_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -378,21 +443,34 @@
   {
     "type": "source_repository",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]
@@ -401,21 +479,34 @@
   {
     "type": "test_suite",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name",
+            "named": true
+          }
+        ]
+      },
+      "properties": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_block",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "property_block",
-          "named": true
-        },
-        {
-          "type": "section_name",
           "named": true
         }
       ]

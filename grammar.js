@@ -50,44 +50,51 @@ module.exports = grammar({
 
         benchmark: $ => seq(
             repeat($.comment),
-            'benchmark', $.section_name,
-            $.property_block,
+            'benchmark',
+            field('name', $.section_name),
+            field('properties', $.property_block),
         ),
 
         common: $ => seq(
             repeat($.comment),
-            'common', $.section_name,
-            $.property_block,
+            'common',
+            field('name', $.section_name),
+            field('properties', $.property_block),
         ),
 
         executable: $ => seq(
             repeat($.comment),
-            'executable', $.section_name,
-            $.property_or_conditional_block,
+            'executable',
+            field('name', $.section_name),
+            field('properties', $.property_or_conditional_block),
         ),
 
         flag: $ => seq(
             repeat($.comment),
-            'flag', $.section_name,
-            $.property_block,
+            'flag',
+            field('name', $.section_name),
+            field('properties', $.property_block),
         ),
 
         library: $ => seq(
             repeat($.comment),
-            'library', optional($.section_name),
-            $.property_or_conditional_block,
+            'library',
+            optional(field('name', $.section_name)),
+            field('properties', $.property_or_conditional_block),
         ),
 
         source_repository: $ => seq(
             repeat($.comment),
-            'source-repository', $.section_name,
-            $.property_block,
+            'source-repository',
+            field('name', $.section_name),
+            field('properties', $.property_block),
         ),
 
         test_suite: $ => seq(
             repeat($.comment),
-            'test-suite', $.section_name,
-            $.property_block,
+            'test-suite',
+            field('name', $.section_name),
+            field('properties', $.property_block),
         ),
 
         section_name: $ => /\d*[a-zA-Z]\w*(-\d*[a-zA-Z]\w*)*/,

@@ -124,12 +124,20 @@
           "value": "benchmark"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_block"
+          }
         }
       ]
     },
@@ -148,12 +156,20 @@
           "value": "common"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_block"
+          }
         }
       ]
     },
@@ -172,12 +188,20 @@
           "value": "executable"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_or_conditional_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_or_conditional_block"
+          }
         }
       ]
     },
@@ -196,12 +220,20 @@
           "value": "flag"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_block"
+          }
         }
       ]
     },
@@ -223,8 +255,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "section_name"
+              "type": "FIELD",
+              "name": "name",
+              "content": {
+                "type": "SYMBOL",
+                "name": "section_name"
+              }
             },
             {
               "type": "BLANK"
@@ -232,8 +268,12 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "property_or_conditional_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_or_conditional_block"
+          }
         }
       ]
     },
@@ -252,12 +292,20 @@
           "value": "source-repository"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_block"
+          }
         }
       ]
     },
@@ -276,12 +324,20 @@
           "value": "test-suite"
         },
         {
-          "type": "SYMBOL",
-          "name": "section_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_name"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "property_block"
+          "type": "FIELD",
+          "name": "properties",
+          "content": {
+            "type": "SYMBOL",
+            "name": "property_block"
+          }
         }
       ]
     },
