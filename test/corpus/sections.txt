@@ -19,6 +19,7 @@ common base
       (field_value)))
   (sections
     (common
+      (section_type)
       (section_name)
       (property_block
         (indent)
@@ -48,6 +49,7 @@ library
       (field_value)))
   (sections
     (library
+      (section_type)
       (property_or_conditional_block
         (indent)
         (field
@@ -76,6 +78,7 @@ library named-lib
       (field_value)))
   (sections
     (library
+      (section_type)
       (section_name)
       (property_or_conditional_block
         (indent)

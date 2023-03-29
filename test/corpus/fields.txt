@@ -21,6 +21,7 @@ common section
       (field_value)))
   (sections
     (common
+      (section_type)
       (section_name)
       (property_block
         (indent)
@@ -60,6 +61,7 @@ common section
       (field_value)))
   (sections
     (common
+      (section_type)
       (section_name)
       (property_block
         (indent)

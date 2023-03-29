@@ -26,6 +26,7 @@ flag bar
       (dedent)))
   (sections
     (flag
+      (section_type)
       (section_name)
       (property_block
         (indent)
@@ -59,6 +60,7 @@ executable foo
       (field_value)))
   (sections
     (library
+      (section_type)
       (property_or_conditional_block
         (indent)
         (field
@@ -69,6 +71,7 @@ executable foo
           (dedent))
         (dedent)))
     (executable
+      (section_type)
       (section_name)
       (property_or_conditional_block
         (indent)

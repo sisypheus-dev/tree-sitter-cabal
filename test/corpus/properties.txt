@@ -24,6 +24,7 @@ library
       (field_value)))
   (sections
     (library
+      (section_type)
       (property_or_conditional_block
         (indent)
         (field
@@ -64,6 +65,7 @@ library
       (field_value)))
   (sections
     (library
+      (section_type)
       (property_or_conditional_block
         (indent)
         (field
@@ -114,6 +116,7 @@ executable foo
   (sections
     (library
       (comment)
+      (section_type)
       (property_or_conditional_block
         (indent)
         (comment)
@@ -124,6 +127,7 @@ executable foo
         (dedent)))
     (executable
       (comment)
+      (section_type)
       (section_name)
       (property_or_conditional_block
         (indent)
@@ -197,6 +201,7 @@ library
       (dedent)))
   (sections
     (library
+      (section_type)
       (property_or_conditional_block
         (indent)
         (field

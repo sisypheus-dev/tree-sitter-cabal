@@ -96,6 +96,7 @@ executable oenc
       (field_value)))
   (sections
     (source_repository
+      (section_type)
       (section_name)
       (property_block
         (indent)
@@ -107,6 +108,7 @@ executable oenc
           (field_value))
         (dedent)))
     (executable
+      (section_type)
       (section_name)
       (property_or_conditional_block
         (indent)
@@ -137,6 +139,7 @@ executable oenc
           (field_value))
         (dedent)))
     (executable
+      (section_type)
       (section_name)
       (property_or_conditional_block
         (indent)

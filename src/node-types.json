@@ -22,6 +22,16 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -97,6 +107,16 @@
         "types": [
           {
             "type": "property_block",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
             "named": true
           }
         ]
@@ -212,6 +232,16 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -275,6 +305,16 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -308,6 +348,16 @@
         "types": [
           {
             "type": "property_or_conditional_block",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
             "named": true
           }
         ]
@@ -463,6 +513,16 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -499,6 +559,16 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -517,20 +587,12 @@
     "named": false
   },
   {
-    "type": "benchmark",
-    "named": false
-  },
-  {
     "type": "cabal-version",
     "named": false
   },
   {
     "type": "comment",
     "named": true
-  },
-  {
-    "type": "common",
-    "named": false
   },
   {
     "type": "condition",
@@ -549,20 +611,12 @@
     "named": false
   },
   {
-    "type": "executable",
-    "named": false
-  },
-  {
     "type": "field_name",
     "named": true
   },
   {
     "type": "field_value",
     "named": true
-  },
-  {
-    "type": "flag",
-    "named": false
   },
   {
     "type": "if",
@@ -573,11 +627,11 @@
     "named": true
   },
   {
-    "type": "library",
-    "named": false
+    "type": "section_name",
+    "named": true
   },
   {
-    "type": "section_name",
+    "type": "section_type",
     "named": true
   },
   {
@@ -585,15 +639,7 @@
     "named": true
   },
   {
-    "type": "source-repository",
-    "named": false
-  },
-  {
     "type": "spec_version",
     "named": true
-  },
-  {
-    "type": "test-suite",
-    "named": false
   }
 ]

@@ -12,7 +12,7 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 23
 #define EXTERNAL_TOKEN_COUNT 4
-#define FIELD_COUNT 2
+#define FIELD_COUNT 3
 #define MAX_ALIAS_SEQUENCE_LENGTH 7
 #define PRODUCTION_ID_COUNT 5
 
@@ -71,13 +71,13 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_cabal_DASHversion] = "cabal-version",
   [anon_sym_COLON] = ":",
   [sym_spec_version] = "spec_version",
-  [anon_sym_benchmark] = "benchmark",
-  [anon_sym_common] = "common",
-  [anon_sym_executable] = "executable",
-  [anon_sym_flag] = "flag",
-  [anon_sym_library] = "library",
-  [anon_sym_source_DASHrepository] = "source-repository",
-  [anon_sym_test_DASHsuite] = "test-suite",
+  [anon_sym_benchmark] = "section_type",
+  [anon_sym_common] = "section_type",
+  [anon_sym_executable] = "section_type",
+  [anon_sym_flag] = "section_type",
+  [anon_sym_library] = "section_type",
+  [anon_sym_source_DASHrepository] = "section_type",
+  [anon_sym_test_DASHsuite] = "section_type",
   [sym_section_name] = "section_name",
   [sym_comment] = "comment",
   [sym_field_name] = "field_name",
@@ -123,12 +123,12 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_COLON] = anon_sym_COLON,
   [sym_spec_version] = sym_spec_version,
   [anon_sym_benchmark] = anon_sym_benchmark,
-  [anon_sym_common] = anon_sym_common,
-  [anon_sym_executable] = anon_sym_executable,
-  [anon_sym_flag] = anon_sym_flag,
-  [anon_sym_library] = anon_sym_library,
-  [anon_sym_source_DASHrepository] = anon_sym_source_DASHrepository,
-  [anon_sym_test_DASHsuite] = anon_sym_test_DASHsuite,
+  [anon_sym_common] = anon_sym_benchmark,
+  [anon_sym_executable] = anon_sym_benchmark,
+  [anon_sym_flag] = anon_sym_benchmark,
+  [anon_sym_library] = anon_sym_benchmark,
+  [anon_sym_source_DASHrepository] = anon_sym_benchmark,
+  [anon_sym_test_DASHsuite] = anon_sym_benchmark,
   [sym_section_name] = sym_section_name,
   [sym_comment] = sym_comment,
   [sym_field_name] = sym_field_name,
@@ -187,31 +187,31 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_benchmark] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_common] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_executable] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_flag] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_library] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_source_DASHrepository] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_test_DASHsuite] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [sym_section_name] = {
     .visible = true,
@@ -366,32 +366,38 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 enum {
   field_name = 1,
   field_properties = 2,
+  field_type = 3,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
   [field_name] = "name",
   [field_properties] = "properties",
+  [field_type] = "type",
 };
 
 static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
-  [1] = {.index = 0, .length = 1},
-  [2] = {.index = 1, .length = 2},
-  [3] = {.index = 3, .length = 1},
-  [4] = {.index = 4, .length = 2},
+  [1] = {.index = 0, .length = 2},
+  [2] = {.index = 2, .length = 3},
+  [3] = {.index = 5, .length = 2},
+  [4] = {.index = 7, .length = 3},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
   [0] =
     {field_properties, 1},
-  [1] =
+    {field_type, 0},
+  [2] =
     {field_name, 1},
     {field_properties, 2},
-  [3] =
+    {field_type, 0},
+  [5] =
     {field_properties, 2},
-  [4] =
+    {field_type, 1},
+  [7] =
     {field_name, 2},
     {field_properties, 3},
+    {field_type, 1},
 };
 
 static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {

@@ -50,49 +50,49 @@ module.exports = grammar({
 
         benchmark: $ => seq(
             repeat($.comment),
-            'benchmark',
+            field('type', alias('benchmark', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_block),
         ),
 
         common: $ => seq(
             repeat($.comment),
-            'common',
+            field('type', alias('common', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_block),
         ),
 
         executable: $ => seq(
             repeat($.comment),
-            'executable',
+            field('type', alias('executable', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_or_conditional_block),
         ),
 
         flag: $ => seq(
             repeat($.comment),
-            'flag',
+            field('type', alias('flag', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_block),
         ),
 
         library: $ => seq(
             repeat($.comment),
-            'library',
+            field('type', alias('library', $.section_type)),
             optional(field('name', $.section_name)),
             field('properties', $.property_or_conditional_block),
         ),
 
         source_repository: $ => seq(
             repeat($.comment),
-            'source-repository',
+            field('type', alias('source-repository', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_block),
         ),
 
         test_suite: $ => seq(
             repeat($.comment),
-            'test-suite',
+            field('type', alias('test-suite', $.section_type)),
             field('name', $.section_name),
             field('properties', $.property_block),
         ),
