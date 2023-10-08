@@ -1,5 +1,5 @@
 {
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs?ref=release-22.05"; };
+  inputs = { nixpkgs.url = "github:nixos/nixpkgs"; };
 
   outputs = { self, nixpkgs }:
     with nixpkgs.legacyPackages.x86_64-linux; {
