@@ -1,7 +1,7 @@
 #include <tree_sitter/parser.h>
 #include <algorithm>
 #include <cstdint>
-#include <vector>
+#include <deque>
 #include <iostream>
 
 using namespace std;
@@ -23,7 +23,10 @@ public:
     unsigned serialize(char *buffer) {
         size_t i = 0;
         buffer[i++] = pending_dedents;
-        for_each(indent_lvls.cbegin(), indent_lvls.cend(), [buffer, &i](uint8_t const n) { buffer[i++] = n; });
+	if(indent_lvls.size() > 0) { indent_lvls.pop_front(); }
+	for_each(indent_lvls.cbegin(), indent_lvls.cend(), [buffer, &i](uint8_t const n) {
+	    buffer[i++] = n;
+	});
         return indent_lvls.size() + 1;
     }
 
@@ -49,6 +52,8 @@ public:
         } else if(valid_symbols[DEDENT] && lexer->eof(lexer)) {
             lexer->result_symbol = DEDENT;
             return true;
+	} else if(lexer->eof(lexer)) {
+	    return false;
         } else if(lexer->lookahead != '\n') {
             return false;
         }
@@ -73,13 +78,14 @@ public:
             lexer->result_symbol = INDENT;
             return true;
         } else if(valid_symbols[DEDENT] && indent < cur_indent_lvl) {
-            while(indent < indent_lvls.back()) {
+            while(indent < cur_indent_lvl) {
                 indent_lvls.pop_back();
+		cur_indent_lvl = indent_lvls.back();
                 pending_dedents++;
             }
             pending_dedents--;
 
-            if(indent != indent_lvls.back()) {
+            if(indent > cur_indent_lvl) {
                 indent_lvls.push_back(indent);
             }
 
@@ -94,12 +100,11 @@ public:
     }
 
 private:
-    vector<uint8_t> indent_lvls;
+    deque<uint8_t> indent_lvls;
     uint8_t pending_dedents;
 };
 
 extern "C" {
-
     void *tree_sitter_cabal_external_scanner_create() {
         return new scanner();
     }
