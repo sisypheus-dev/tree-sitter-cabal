@@ -1,15 +1,11 @@
 module.exports = grammar({
   name: "cabal",
 
-  extras: ($) => [/\s|\n/],
+  extras: ($) => [$.silly, /\s|\n/],
 
-  conflicts: ($) => [
-    [$.properties],
-    [$.sections],
-    [$.property_or_conditional_block],
-    [$.property_block],
-    [$.conditional],
-  ],
+  externals: ($) => [$.silly, $.indent, $.dedent, $._indented],
+
+  conflicts: ($) => [[$.properties], [$.sections]],
 
   rules: {
     cabal: ($) =>
@@ -100,14 +96,26 @@ module.exports = grammar({
     comment: ($) => token(seq("--", /.*/)),
 
     property_block: ($) =>
-      seq(repeat($.comment), repeat1(seq($.field, repeat($.comment)))),
+      seq(
+        $.indent,
+        repeat($.comment),
+        repeat1(seq($.field, repeat($.comment))),
+        $.dedent,
+      ),
 
     field: ($) =>
       seq(
         $.field_name,
         ":",
         $.field_value,
-        optional(seq($.field_value, repeat($.field_value))),
+        optional(
+          seq(
+            $.indent,
+            $.field_value,
+            repeat(seq($._indented, $.field_value)),
+            $.dedent,
+          ),
+        ),
       ),
 
     field_name: ($) => /\w(\w|-)+/,
@@ -116,8 +124,10 @@ module.exports = grammar({
 
     property_or_conditional_block: ($) =>
       seq(
+        $.indent,
         repeat($.comment),
         repeat1(seq(choice($.field, $.conditional), repeat($.comment))),
+        $.dedent,
       ),
 
     conditional: ($) =>
