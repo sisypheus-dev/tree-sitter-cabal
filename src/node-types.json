@@ -264,19 +264,11 @@
       "required": true,
       "types": [
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
           "type": "field_name",
           "named": true
         },
         {
           "type": "field_value",
-          "named": true
-        },
-        {
-          "type": "indent",
           "named": true
         }
       ]
@@ -406,15 +398,7 @@
           "named": true
         },
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
           "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
           "named": true
         }
       ]
@@ -437,15 +421,7 @@
           "named": true
         },
         {
-          "type": "dedent",
-          "named": true
-        },
-        {
           "type": "field",
-          "named": true
-        },
-        {
-          "type": "indent",
           "named": true
         }
       ]
@@ -599,10 +575,6 @@
     "named": true
   },
   {
-    "type": "dedent",
-    "named": true
-  },
-  {
     "type": "else",
     "named": false
   },
@@ -623,19 +595,11 @@
     "named": false
   },
   {
-    "type": "indent",
-    "named": true
-  },
-  {
     "type": "section_name",
     "named": true
   },
   {
     "type": "section_type",
-    "named": true
-  },
-  {
-    "type": "silly",
     "named": true
   },
   {

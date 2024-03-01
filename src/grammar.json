@@ -428,10 +428,6 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "indent"
-        },
-        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
@@ -456,10 +452,6 @@
               }
             ]
           }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
         }
       ]
     },
@@ -486,31 +478,14 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "indent"
-                },
-                {
-                  "type": "SYMBOL",
                   "name": "field_value"
                 },
                 {
                   "type": "REPEAT",
                   "content": {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "_indented"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "field_value"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "field_value"
                   }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "dedent"
                 }
               ]
             },
@@ -532,10 +507,6 @@
     "property_or_conditional_block": {
       "type": "SEQ",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "indent"
-        },
         {
           "type": "REPEAT",
           "content": {
@@ -570,10 +541,6 @@
               }
             ]
           }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "dedent"
         }
       ]
     },
@@ -659,42 +626,19 @@
   },
   "extras": [
     {
-      "type": "SYMBOL",
-      "name": "silly"
-    },
-    {
       "type": "PATTERN",
       "value": "\\s|\\n"
     }
   ],
   "conflicts": [
-    [
-      "properties"
-    ],
-    [
-      "sections"
-    ]
+    ["properties"],
+    ["sections"],
+    ["property_or_conditional_block"],
+    ["property_block"],
+    ["conditional"]
   ],
   "precedences": [],
-  "externals": [
-    {
-      "type": "SYMBOL",
-      "name": "silly"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "indent"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "dedent"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "_indented"
-    }
-  ],
+  "externals": [],
   "inline": [],
   "supertypes": []
 }
-
